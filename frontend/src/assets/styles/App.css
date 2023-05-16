@@ -13,8 +13,13 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  margin: 0;
+}
+
 .main {
   flex: 1;
+  min-height: 600px;
 }
 
 .bg-dark {
@@ -71,7 +76,7 @@ body {
 }
 
 .hero {
-  background-image: url('../img/bank-tree.jpeg');
+  background-image: url("../img/bank-tree.jpeg");
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -182,6 +187,14 @@ body {
   display: flex;
 }
 
+.header-right {
+  display: flex;
+}
+.header-logo {
+  width: 20px;
+  padding-right: 20px;
+}
+
 .input-remember label {
   margin-left: 0.25rem;
 }
@@ -205,7 +218,7 @@ body {
 .footer {
   display: flex;
   justify-content: center;
-  border-top: 2px solid #ccc;
+  /* border-top: 2px solid #ccc; */
   padding: 2rem 0 1.5rem;
 }
 
@@ -274,6 +287,108 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+}
+
+.edit-name-main {
+  height: 80px;
+}
+
+.edit-name-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.edit-name-divs {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-name-input {
+  width: 160px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: purple;
+  background-color: white;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.edit-name-input::placeholder {
+  color: grey;
+  opacity: 0.9;
+  font-weight: 500;
+}
+.edit-name-button {
+  width: 130px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: purple;
+  background-color: white;
+  font-weight: 700;
+}
+
+.transactions-title {
+  border: solid grey;
+  border-width: 2px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.transaction-array {
+  margin-top: 100px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.transaction-array-titles {
+  display: flex;
+}
+.transaction-array-title {
+  width: 25%;
+}
+
+.transactions-title > h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.transactions-title > h1 {
+  font-size: 40px;
+}
+
+.transactions-title > h3 {
+  font-size: 16px;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.transaction {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.transaction-summary {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+.transaction-chevron {
+  width: 20px;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary:first-of-type {
+  list-style-type: none;
 }
 
 @media (min-width: 720px) {
