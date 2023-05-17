@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../../../assets/styles/App.module.css";
 
 const EditName = () => {
   const [editMode, setEditMode] = React.useState(true);
@@ -8,34 +9,34 @@ const EditName = () => {
   };
 
   return (
-    <div className="edit-name-main">
+    <div className={styles.editNameMain}>
       {editMode ? (
-        <form className="edit-name-edit">
-          <div className="edit-name-divs">
+        <form className={styles.editNameEdit}>
+          <div className={styles.editNameDivs}>
             <input
-              className="edit-name-input"
+              className={styles.editNameInput}
               type="text"
               id="username"
               placeholder="Tony"
             />
             <input
-              className="edit-name-input"
+              className={styles.editNameInput}
               type="password"
               id="password"
               placeholder="Jarvis"
             />
           </div>
-          <div className="edit-name-divs">
-            <button className="edit-name-button" onClick={handleClick}>
+          <div className={styles.editNameDivs}>
+            <button className={styles.editNameButton} onClick={handleClick}>
               Save
             </button>
-            <button className="edit-name-button" onClick={handleClick}>
+            <button className={styles.editNameButton} onClick={handleClick}>
               Cancel
             </button>
           </div>
         </form>
       ) : (
-        <button className="edit-button" onClick={handleClick}>
+        <button className={styles.editButton} onClick={handleClick}>
           Edit Name
         </button>
       )}

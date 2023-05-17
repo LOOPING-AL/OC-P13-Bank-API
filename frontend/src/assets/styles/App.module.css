@@ -17,16 +17,20 @@ h1 {
   margin: 0;
 }
 
+p {
+  margin: 10px;
+}
+
 .main {
   flex: 1;
   min-height: 600px;
 }
 
-.bg-dark {
+.bgDark {
   background-color: #12002b;
 }
 
-.sr-only {
+.srOnly {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
   -webkit-clip-path: inset(50%) !important;
@@ -40,37 +44,37 @@ h1 {
   white-space: nowrap !important; /* 3 */
 }
 
-.main-nav {
+.mainNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
 }
 
-.main-nav a {
+.mainNav a {
   font-weight: bold;
   color: #2c3e50;
 }
 
-.main-nav a.router-link-exact-active {
+.mainNav a.routerLinkExactActive {
   color: #42b983;
 }
 
-.main-nav-item {
+.mainNavItem {
   text-decoration: none;
   margin-right: 0.5rem;
 }
 
-.main-nav-item:hover {
+.mainNavItem:hover {
   text-decoration: underline;
 }
 
-.main-nav-logo {
+.mainNavLogo {
   display: flex;
   align-items: center;
 }
 
-.main-nav-logo-image {
+.mainNavLogoImage {
   max-width: 100%;
   width: 200px;
 }
@@ -84,7 +88,7 @@ h1 {
   position: relative;
 }
 
-.hero-content {
+.heroContent {
   position: relative;
   top: 2rem;
   width: 200px;
@@ -94,13 +98,13 @@ h1 {
   margin: 0 auto;
 }
 
-.hero-content .subtitle {
+.heroContent .subtitle {
   font-weight: bold;
   font-size: 1rem;
   margin: 0;
 }
 
-.hero-content .text {
+.heroContent .text {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
@@ -111,7 +115,7 @@ h1 {
     background-position: 0% 33%;
   }
 
-  .hero-content {
+  .heroContent {
     position: absolute;
     top: 50px;
     right: 50px;
@@ -119,11 +123,11 @@ h1 {
     margin: 2rem;
   }
 
-  .hero-content .subtitle {
+  .heroContent .subtitle {
     font-size: 1.5rem;
   }
 
-  .hero-content .text {
+  .heroContent .text {
     font-size: 1.2rem;
   }
 }
@@ -133,32 +137,30 @@ h1 {
   flex-direction: column;
 }
 
-@media (min-width: 920px) {
-  .features {
-    flex-direction: row;
-  }
-}
-
-.feature-icon {
+.featureIcon {
   width: 100px;
   border: 10px solid #00bc77;
   border-radius: 50%;
   padding: 1rem;
 }
+.featureItems {
+  display: flex;
+  flex-direction: row;
+}
 
-.feature-item {
+.featureItem {
   flex: 1;
   padding: 2.5rem;
 }
 
-.feature-item-title {
+.featureItemTitle {
   color: #222;
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-.sign-in-button {
+.signInButton {
   display: block;
   width: 100%;
   padding: 8px;
@@ -170,7 +172,7 @@ h1 {
   color: #fff;
 }
 
-.sign-in-content {
+.signInContent {
   box-sizing: border-box;
   background-color: white;
   width: 300px;
@@ -179,38 +181,38 @@ h1 {
   padding: 2rem;
 }
 
-.sign-in-icon {
+.signInIcon {
   font-size: 5rem;
 }
 
-.input-remember {
+.inputRemember {
   display: flex;
 }
 
-.header-right {
+.headerRight {
   display: flex;
 }
-.header-logo {
+.headerLogo {
   width: 20px;
   padding-right: 20px;
 }
 
-.input-remember label {
+.inputRemember label {
   margin-left: 0.25rem;
 }
 
-.input-wrapper {
+.inputWrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
 }
 
-.input-wrapper label {
+.inputWrapper label {
   font-weight: bold;
 }
 
-.input-wrapper input {
+.inputWrapper input {
   padding: 5px;
   font-size: 1.2rem;
 }
@@ -222,7 +224,7 @@ h1 {
   padding: 2rem 0 1.5rem;
 }
 
-.footer-text {
+.footerText {
   margin: 0;
   padding: 0;
 }
@@ -242,29 +244,29 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.account-amount {
+.accountAmount {
   margin: 0;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.account-amount-description {
+.accountAmountDescription {
   margin: 0;
 }
 
-.account-title {
+.accountTitle {
   margin: 0;
   padding: 0;
   font-size: 1rem;
   font-weight: normal;
 }
 
-.account-content-wrapper {
+.accountContentWrapper {
   width: 100%;
   flex: 1;
 }
 
-.edit-button {
+.editButton {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
@@ -277,7 +279,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.transaction-button {
+.transactionButton {
   display: block;
   width: 100%;
   padding: 8px;
@@ -289,22 +291,22 @@ h1 {
   color: #fff;
 }
 
-.edit-name-main {
+.editNameMain {
   height: 80px;
 }
 
-.edit-name-edit {
+.editNameEdit {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
 }
-.edit-name-divs {
+.editNameDivs {
   display: flex;
   gap: 10px;
 }
 
-.edit-name-input {
+.editNameInput {
   width: 160px;
   height: 30px;
   border-radius: 5px;
@@ -316,12 +318,12 @@ h1 {
   padding-right: 10px;
 }
 
-.edit-name-input::placeholder {
+.editNameInput::placeholder {
   color: grey;
   opacity: 0.9;
   font-weight: 500;
 }
-.edit-name-button {
+.editNameButton {
   width: 130px;
   height: 30px;
   border-radius: 5px;
@@ -331,7 +333,7 @@ h1 {
   font-weight: 700;
 }
 
-.transactions-title {
+.transactionsTitle {
   border: solid grey;
   border-width: 2px;
   background-color: white;
@@ -341,27 +343,28 @@ h1 {
   padding-bottom: 20px;
 }
 
-.transaction-array {
+.transactionArray {
   margin-top: 100px;
   margin-right: 5%;
   margin-left: 5%;
 }
-.transaction-array-titles {
+.transactionArrayTitles {
   display: flex;
+  padding-left: 5%;
 }
-.transaction-array-title {
+.transactionArrayTitle {
   width: 25%;
 }
 
-.transactions-title > h2 {
+.transactionsTitle > h2 {
   font-size: 18px;
   margin: 0;
 }
-.transactions-title > h1 {
+.transactionsTitle > h1 {
   font-size: 40px;
 }
 
-.transactions-title > h3 {
+.transactionsTitle > h3 {
   font-size: 16px;
   margin: 0;
   margin-top: 5px;
@@ -373,14 +376,39 @@ h1 {
   flex-direction: row;
 }
 
-.transaction-summary {
+.transactionSummary {
   display: flex;
   text-align: center;
   align-items: center;
   flex-direction: row;
 }
-.transaction-chevron {
+.transactionImgChevron {
   width: 20px;
+}
+
+.transactionImgChevronClose {
+  transform: rotate(180deg);
+}
+
+.transactionContentChevron {
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transactionInfo {
+  width: 25%;
+}
+.transactionBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 12%;
+}
+
+.iconPencil {
+  width: 20px;
+  margin-left: 5px;
 }
 
 details summary::-webkit-details-marker {
@@ -396,11 +424,11 @@ details summary:first-of-type {
     flex-direction: row;
   }
 
-  .account-content-wrapper.cta {
+  .accountContentWrapper.cta {
     flex: 0;
   }
 
-  .transaction-button {
+  .transactionButton {
     width: 200px;
   }
 }

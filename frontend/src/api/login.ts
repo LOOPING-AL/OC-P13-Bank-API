@@ -1,4 +1,4 @@
-const getToken = async (email, password) => {
+const login = async (email: string, password: string) =>
   await fetch("http://localhost:3001/api/v1/user/login", {
     method: "POST",
     body: JSON.stringify({
@@ -11,6 +11,5 @@ const getToken = async (email, password) => {
   })
     .then((res) => res.json())
     .then((res) => res);
-};
 
-export default getToken;
+export default login;
