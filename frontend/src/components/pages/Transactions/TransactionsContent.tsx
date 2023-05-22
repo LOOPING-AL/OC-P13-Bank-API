@@ -1,4 +1,5 @@
 import { styles } from "../../../assets";
+import transactions from "../../../assets/data/transactions";
 import { Transaction } from "../../ui";
 
 const TransactionsContent = () => (
@@ -16,7 +17,9 @@ const TransactionsContent = () => (
         <h4 className={styles.transactionArrayTitle}>Amount</h4>
         <h4 className={styles.transactionArrayTitle}>Balance</h4>
       </div>
-      <Transaction />
+      {transactions.map((transaction) => (
+        <Transaction transaction={transaction} />
+      ))}
     </section>
   </main>
 );

@@ -1,6 +1,6 @@
 import genericCall from "./tools/genericCall";
 
-const profile = async (token: string) =>
+const getProfile = async (token: string) =>
   genericCall("profile", {
     method: "POST",
     headers: {
@@ -9,4 +9,4 @@ const profile = async (token: string) =>
     },
   });
 
-export default profile;
+export default getProfile;

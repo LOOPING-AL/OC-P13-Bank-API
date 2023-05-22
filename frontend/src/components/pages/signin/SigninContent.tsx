@@ -1,6 +1,6 @@
 import { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { login, getErrorMessage } from "../../../api";
+import { login, getErrorMessage, getProfile } from "../../../api";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import {
   changeErrorMessage,
@@ -23,13 +23,20 @@ const SigninContent = () => {
     };
     const email = target.email.value;
     const password = target.password.value;
+
     const response = await login(email, password);
+    const token = response.body.token;
+
     if (response.status === 200) {
-      dispatch(reduxLogin(response.body.token));
+      const profile = await getProfile(token);
+      dispatch(reduxLogin({ token, user: profile.body }));
       dispatch(changeErrorMessage(null));
+
       navigate(Routes.USER);
+
       return;
     }
+
     dispatch(changeErrorMessage(getErrorMessage(response)));
   };
 
@@ -47,7 +54,12 @@ const SigninContent = () => {
             }`}
           >
             <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              defaultValue={"tony@stark.com"}
+            />
           </div>
           <div
             className={`${styles.inputWrapper} ${
@@ -55,7 +67,7 @@ const SigninContent = () => {
             }`}
           >
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input type="password" id="password" defaultValue={"password123"} />
           </div>
           <div className={styles.inputRemember}>
             <input type="checkbox" id="remember-me" />

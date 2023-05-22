@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { iconDownChevron, iconPencil, styles } from "../../../assets";
+import { transactionType } from "../../../global";
 
-const Transaction = () => {
+const Transaction = ({ transaction }: { transaction: transactionType }) => {
   const [openSummary, setOpenSummary] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
   const [openNotes, setOpenNotes] = useState(false);
@@ -31,10 +32,10 @@ const Transaction = () => {
             }`}
           />
         </div>
-        <p className={styles.transactionInfo}>June 20th, 2020</p>
-        <p className={styles.transactionInfo}>June 20th, 2020</p>
-        <p className={styles.transactionInfo}>June 20th, 2020</p>
-        <p className={styles.transactionInfo}>June 20th, 2020</p>
+        <p className={styles.transactionInfo}>{transaction.date}</p>
+        <p className={styles.transactionInfo}>{transaction.description}</p>
+        <p className={styles.transactionInfo}>${transaction.amount}</p>
+        <p className={styles.transactionInfo}>${transaction.balance}</p>
       </summary>
       <div className={styles.transactionBottom}>
         <p>Transactions Types: Electronic</p>

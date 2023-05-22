@@ -1,13 +1,25 @@
-import { Link } from "react-router-dom";
-import { argentBankLogo, iconLogin, iconLogout, styles } from "../../../assets";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  argentBankLogo,
+  iconLogin,
+  iconLogout,
+  styles,
+  iconProfile,
+} from "../../../assets";
 import { Routes } from "../../../global";
-import { useAppSelector } from "../../../app/hooks";
-import { getToken } from "../../../features";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { getProfile, logout } from "../../../features";
 
 const Header = () => {
-  const token = useAppSelector(getToken);
+  const profile = useAppSelector(getProfile);
+  const dispatch = useAppDispatch();
+  const isConnected = profile.firstName !== "";
+  const navigate = useNavigate();
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    dispatch(logout());
+    navigate(Routes.SIGNIN);
+  };
 
   return (
     <nav className={styles.mainNav}>
@@ -20,18 +32,27 @@ const Header = () => {
         <h1 className={`${styles.srOnly}`}>Argent Bank</h1>
       </Link>
 
-      <Link
-        to={Routes.SIGNIN}
-        className={styles.headerRight}
-        onClick={handleClick}
-      >
-        <img
-          src={token ? iconLogout : iconLogin}
-          className={styles.headerLogo}
-          alt="icon login/logout"
-        />
-        {token ? "Logout" : "Login"}
-      </Link>
+      <div className={styles.headerRight}>
+        {profile.firstName !== "" && (
+          <Link to={Routes.USER}>
+            <img
+              src={iconProfile}
+              className={styles.headerLogo}
+              alt="profile Icon"
+            />
+            {profile.firstName}
+          </Link>
+        )}
+
+        <div onClick={handleClick}>
+          <img
+            src={profile.firstName !== "" ? iconLogout : iconLogin}
+            className={styles.headerLogo}
+            alt="icon login/logout"
+          />
+          {profile.firstName !== "" ? "Logout" : "Login"}
+        </div>
+      </div>
     </nav>
   );
 };

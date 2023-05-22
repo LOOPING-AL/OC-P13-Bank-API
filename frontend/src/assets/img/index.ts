@@ -7,3 +7,4 @@ export { default as iconSecurity } from "./icon-security.png";
 export { default as iconUpChevron } from "./icon-up-chevron.png";
 export { default as iconLogin } from "./icon-login.png";
 export { default as iconLogout } from "./icon-logout.png";
+export { default as iconProfile } from "./icon-profile.svg";

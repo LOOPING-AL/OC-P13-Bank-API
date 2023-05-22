@@ -1,6 +1,2 @@
-export {
-  getToken,
-  login,
-  userSlice,
-  default as userReducer,
-} from "./userSlice";
+export { default as userReducer } from "./userSlice";
+export * from "./userSlice";

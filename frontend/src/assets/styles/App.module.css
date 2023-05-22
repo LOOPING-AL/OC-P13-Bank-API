@@ -191,6 +191,9 @@ p {
 
 .headerRight {
   display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 .headerLogo {
   width: 20px;

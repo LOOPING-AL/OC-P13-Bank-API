@@ -23,9 +23,8 @@ const WelcomeName = ({
   };
 
   const handleClickOnSave = async (e: FormEvent<HTMLFormElement>) => {
-    setEditMode(!editMode);
-
     e.preventDefault();
+    setEditMode(!editMode);
     const target = e.target as typeof e.target & {
       firstName: { value: string };
       lastName: { value: string };
@@ -33,7 +32,6 @@ const WelcomeName = ({
     const firstName = target.firstName.value;
     const lastName = target.lastName.value;
     const response = await editProfile(firstName, lastName, token);
-    console.log(response);
     if (response.status === 200) {
       setCredentials({ firstName, lastName });
       return;
@@ -60,6 +58,7 @@ const WelcomeName = ({
                   type="text"
                   id="firstName"
                   defaultValue={credentials.firstName}
+                  autoFocus
                 />
                 <input
                   className={styles.editNameInput}
