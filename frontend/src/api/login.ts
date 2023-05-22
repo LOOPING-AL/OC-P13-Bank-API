@@ -1,5 +1,7 @@
+import genericCall from "./tools/genericCall";
+
 const login = async (email: string, password: string) =>
-  await fetch("http://localhost:3001/api/v1/user/login", {
+  genericCall("login", {
     method: "POST",
     body: JSON.stringify({
       email,
@@ -8,8 +10,6 @@ const login = async (email: string, password: string) =>
     headers: {
       "Content-Type": "application/json",
     },
-  })
-    .then((res) => res.json())
-    .then((res) => res);
+  });
 
 export default login;

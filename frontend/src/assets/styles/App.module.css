@@ -208,6 +208,15 @@ p {
   margin-bottom: 1rem;
 }
 
+.errorMessage {
+  display: flex;
+  text-align: left;
+}
+
+.errorColor {
+  color: red;
+}
+
 .inputWrapper label {
   font-weight: bold;
 }

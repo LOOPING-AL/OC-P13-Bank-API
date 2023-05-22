@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { argentBankLogo, iconExit } from "../../../assets";
-import styles from "../../../assets/styles/App.module.css";
+import { argentBankLogo, iconExit, styles } from "../../../assets";
+import { Routes } from "../../../global";
 
 const Header = () => (
   <nav className={styles.mainNav}>
-    <Link className={styles.mainNavLogo} to="/home">
+    <Link className={styles.mainNavLogo} to={Routes.HOME}>
       <img
         className={styles.mainNavLogoImage}
         src={argentBankLogo}
@@ -13,7 +13,7 @@ const Header = () => (
       <h1 className={`${styles.srOnly}`}>Argent Bank</h1>
     </Link>
 
-    <Link to={"/sign-in"} className={styles.headerRight}>
+    <Link to={Routes.SIGNIN} className={styles.headerRight}>
       <img src={iconExit} className={styles.headerLogo} alt="icon exit" />
       Sign In
     </Link>

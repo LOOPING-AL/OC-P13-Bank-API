@@ -1,22 +1,24 @@
-import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../components/pages/Home";
-import SignIn from "../components/pages/SignIn";
-import Transactions from "../components/pages/Transactions";
-import User from "../components/pages/User";
+import {
+  HomeMain,
+  SignInMain,
+  TransactionsMain,
+  UserMain,
+} from "../components/pages";
+import { Routes } from "../global";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-    errorElement: <Home />,
+    path: Routes.HOME,
+    element: <HomeMain />,
+    errorElement: <HomeMain />,
   },
-  { path: "sign-in", element: <SignIn /> },
-  { path: "user", element: <User /> },
+  { path: Routes.SIGNIN, element: <SignInMain /> },
+  { path: Routes.USER, element: <UserMain /> },
   {
-    path: "transactions/:transactionId",
-    element: <Transactions />,
-    errorElement: <Home />,
+    path: `${Routes.TRANSACTIONS}/:transactionId`,
+    element: <TransactionsMain />,
+    errorElement: <HomeMain />,
   },
 ]);
 

@@ -1,4 +1,4 @@
-import styles from "../../../assets/styles/App.module.css";
+import { styles } from "../../../assets";
 
 const Footer = () => (
   <footer className={styles.footer}>

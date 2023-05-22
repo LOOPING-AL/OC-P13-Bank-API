@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { iconDownChevron, iconPencil } from "../../../assets";
-import styles from "../../../assets/styles/App.module.css";
+import { iconDownChevron, iconPencil, styles } from "../../../assets";
 
 const Transaction = () => {
   const [openSummary, setOpenSummary] = useState(false);

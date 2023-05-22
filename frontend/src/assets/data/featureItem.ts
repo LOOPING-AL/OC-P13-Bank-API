@@ -1,6 +1,6 @@
 import { iconChat, iconMoney, iconSecurity } from "../img";
 
-export const featureItems = [
+const featureItems = [
   {
     icon: iconChat,
     title: "You are our #1 priority",
@@ -20,3 +20,4 @@ export const featureItems = [
       "We use top of the line encryption to make sure your data and money is always safe.",
   },
 ];
+export default featureItems;

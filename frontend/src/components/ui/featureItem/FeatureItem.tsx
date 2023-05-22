@@ -1,5 +1,4 @@
-import React from "react";
-import styles from "../../../assets/styles/App.module.css";
+import { styles } from "../../../assets";
 
 const FeatureItem = ({ icon, title, paragraph }: any) => (
   <div className={styles.featureItem}>

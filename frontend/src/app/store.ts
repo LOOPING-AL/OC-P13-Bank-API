@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dataReducer from "../features/data/dataSlice";
+import { errorMessageReducer, userReducer } from "../features";
 
 export const store = configureStore({
   reducer: {
-    data: dataReducer,
+    user: userReducer,
+    errorMessage: errorMessageReducer,
   },
 });
 
