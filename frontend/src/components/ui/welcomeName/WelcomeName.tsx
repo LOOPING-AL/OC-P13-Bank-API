@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { styles } from "../../../assets";
-import editProfile from "../../../api/editProfile";
+import { editProfile } from "../../../api";
 import { useAppSelector } from "../../../app/hooks";
 import { getToken } from "../../../features";
 
@@ -18,7 +18,7 @@ const WelcomeName = ({
     lastName: lastName,
   });
 
-  const handleClickOnEdit = () => {
+  const handleClick = () => {
     setEditMode(!editMode);
   };
 
@@ -36,10 +36,6 @@ const WelcomeName = ({
       setCredentials({ firstName, lastName });
       return;
     }
-  };
-
-  const handleClickOnCancel = () => {
-    setEditMode(!editMode);
   };
 
   return (
@@ -71,10 +67,7 @@ const WelcomeName = ({
                 <button type="submit" className={styles.editButton}>
                   Save
                 </button>
-                <button
-                  className={styles.editButton}
-                  onClick={handleClickOnCancel}
-                >
+                <button className={styles.editButton} onClick={handleClick}>
                   Cancel
                 </button>
               </div>
@@ -88,7 +81,7 @@ const WelcomeName = ({
             <br />
             {credentials.firstName} {credentials.lastName}!
           </h1>
-          <button className={styles.editButton} onClick={handleClickOnEdit}>
+          <button className={styles.editButton} onClick={handleClick}>
             Edit Name
           </button>
         </>

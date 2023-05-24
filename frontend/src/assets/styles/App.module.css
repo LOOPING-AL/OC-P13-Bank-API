@@ -18,10 +18,21 @@ h1 {
 }
 
 p {
-  margin: 10px;
+  margin: 0;
+}
+
+select {
+  width: 100%;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid grey;
+  border-radius: 5px;
 }
 
 .main {
+  padding-top: 20px;
+  padding-bottom: 20px;
   flex: 1;
   min-height: 600px;
 }
@@ -35,7 +46,7 @@ p {
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important; /* 2 */
-  height: 1px !important;
+  height: 10px !important;
   margin: -1px !important;
   overflow: hidden !important;
   padding: 0 !important;
@@ -232,8 +243,8 @@ p {
 .footer {
   display: flex;
   justify-content: center;
-  /* border-top: 2px solid #ccc; */
   padding: 2rem 0 1.5rem;
+  height: 50px;
 }
 
 .footerText {
@@ -363,6 +374,7 @@ p {
 .transactionArrayTitles {
   display: flex;
   padding-left: 5%;
+  color: white;
 }
 .transactionArrayTitle {
   width: 25%;
@@ -386,6 +398,9 @@ p {
   background-color: white;
   display: flex;
   flex-direction: row;
+  border: 1px solid #ccc;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .transactionSummary {
@@ -415,12 +430,27 @@ p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 5px;
   margin-left: 12%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.iconPencil {
+.transactionInput {
+  height: 20px;
+  font-size: 16px;
+}
+
+.transactionForm {
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.transactionIcon {
   width: 20px;
   margin-left: 5px;
+  margin-right: 5px;
 }
 
 details summary::-webkit-details-marker {

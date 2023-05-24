@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <HomeMain />,
     errorElement: <HomeMain />,
   },
-  { path: Routes.SIGNIN, element: <SignInMain /> },
+  { path: Routes.LOGIN, element: <SignInMain /> },
   { path: Routes.USER, element: <UserMain /> },
   {
     path: `${Routes.TRANSACTIONS}/:transactionId`,

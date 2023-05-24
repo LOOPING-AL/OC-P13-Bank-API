@@ -33,7 +33,7 @@ const User = () => {
         }
 
         dispatch(changeErrorMessage(getErrorMessage(res)));
-        navigate(Routes.SIGNIN);
+        navigate(Routes.LOGIN);
       });
     }
   });
@@ -53,7 +53,7 @@ const User = () => {
           )}
         </>
       ) : (
-        <Navigate to={Routes.SIGNIN} />
+        <Navigate to={Routes.LOGIN} />
       )}
     </>
   );

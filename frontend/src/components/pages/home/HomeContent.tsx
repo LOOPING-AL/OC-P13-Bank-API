@@ -6,6 +6,7 @@ const HomeContent = () => (
     <div className={styles.hero}>
       <section className={`${styles.heroContent}`}>
         <h2 className={`${styles.srOnly}`}>Promoted Content</h2>
+
         {subtiltes.map((subtitle, index) => (
           <Subtitle key={index} subtitle={subtitle.text} />
         ))}
@@ -14,6 +15,7 @@ const HomeContent = () => (
 
     <section className={styles.features}>
       <h2 className={`${styles.srOnly}`}>Features</h2>
+
       <div className={styles.featureItems}>
         {featureItems.map((feature, index) => (
           <FeatureItem

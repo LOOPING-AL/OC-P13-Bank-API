@@ -5,9 +5,10 @@ export enum MessageError {
   BAD_ROUTE = "Vous devez vous identifier avant d'accéder à une page",
   RETRY = "Retry in few minutes (error: ",
 }
+
 export enum Routes {
   HOME = "/",
-  SIGNIN = "/login",
+  LOGIN = "/login",
   USER = "/profile",
   TRANSACTIONS = "/transactions",
 }

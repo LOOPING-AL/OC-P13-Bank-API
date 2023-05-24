@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { iconDownChevron, iconPencil, styles } from "../../../assets";
+import { iconDownChevron, styles, categories } from "../../../assets";
 import { transactionType } from "../../../global";
+import ImgSavePencil from "../imgSavePencil/ImgSavePencil";
 
 const Transaction = ({ transaction }: { transaction: transactionType }) => {
   const [openSummary, setOpenSummary] = useState(false);
@@ -18,7 +19,7 @@ const Transaction = ({ transaction }: { transaction: transactionType }) => {
     setCategory(e.currentTarget.value);
 
   return (
-    <details className={styles.transaction} open>
+    <details className={styles.transaction}>
       <summary
         className={styles.transactionSummary}
         onClick={handleClickSummary}
@@ -28,19 +29,23 @@ const Transaction = ({ transaction }: { transaction: transactionType }) => {
             src={iconDownChevron}
             alt="chevron"
             className={`${styles.transactionImgChevron}  ${
-              openSummary && styles.transactionImgChevronClose
+              !openSummary && styles.transactionImgChevronClose
             }`}
           />
         </div>
+
         <p className={styles.transactionInfo}>{transaction.date}</p>
         <p className={styles.transactionInfo}>{transaction.description}</p>
         <p className={styles.transactionInfo}>${transaction.amount}</p>
         <p className={styles.transactionInfo}>${transaction.balance}</p>
       </summary>
+
       <div className={styles.transactionBottom}>
         <p>Transactions Types: Electronic</p>
-        <p>
+
+        <div className={styles.transactionForm}>
           Categorie:
+          <ImgSavePencil open={openCategory} handle={handleClickCategory} />
           {!openCategory ? (
             category
           ) : (
@@ -50,41 +55,29 @@ const Transaction = ({ transaction }: { transaction: transactionType }) => {
               onChange={(e) => handleChangeCategory(e)}
               defaultValue={category}
             >
-              <option value="volvo">Food</option>
-              <option value="mercedes">Health</option>
-              <option value="audi">Housing</option>
-              <option value="saab">Shopping</option>
-              <option value="audi">Transports</option>
+              {categories.map((category) => (
+                <option value={category}>{category}</option>
+              ))}
             </select>
           )}
-          <img
-            src={iconPencil}
-            alt="icon pencil"
-            className={styles.iconPencil}
-            onClick={handleClickCategory}
-          />
-        </p>
+        </div>
 
-        <p>
+        <div className={styles.transactionForm}>
           Notes:
-          <img
-            src={iconPencil}
-            alt="icon pencil"
-            className={styles.iconPencil}
-            onClick={handleClickNotes}
-          />
-        </p>
-        <p>
-          {!openNotes ? (
-            notes
-          ) : (
-            <input
-              type="text"
-              defaultValue={notes}
-              onChange={(e) => handleChangeNotes(e)}
-            />
-          )}
-        </p>
+          <ImgSavePencil open={openNotes} handle={handleClickNotes} />
+          <div>
+            {!openNotes ? (
+              notes
+            ) : (
+              <input
+                className={styles.transactionInput}
+                type="text"
+                defaultValue={notes}
+                onChange={(e) => handleChangeNotes(e)}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </details>
   );

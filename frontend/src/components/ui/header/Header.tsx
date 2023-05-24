@@ -13,12 +13,14 @@ import { getProfile, logout } from "../../../features";
 const Header = () => {
   const profile = useAppSelector(getProfile);
   const dispatch = useAppDispatch();
-  const isConnected = profile.firstName !== "";
   const navigate = useNavigate();
 
   const handleClick = () => {
-    dispatch(logout());
-    navigate(Routes.SIGNIN);
+    if (profile.firstName !== "") {
+      dispatch(logout());
+      navigate(Routes.HOME);
+    }
+    navigate(Routes.LOGIN);
   };
 
   return (
@@ -56,4 +58,5 @@ const Header = () => {
     </nav>
   );
 };
+
 export default Header;

@@ -5,7 +5,9 @@ import HomeContent from "./HomeContent";
 const Home = () => (
   <div className={styles.App}>
     <Header />
+
     <HomeContent />
+
     <Footer />
   </div>
 );

@@ -1,6 +1,7 @@
-import { styles } from "../../../assets";
-import transactions from "../../../assets/data/transactions";
+import { styles, transactions } from "../../../assets";
 import { Transaction } from "../../ui";
+
+const arrayColumns = ["Date", "Description", "Amount", "Balance"];
 
 const TransactionsContent = () => (
   <main className={`${styles.main} ${styles.bgDark}`}>
@@ -12,13 +13,15 @@ const TransactionsContent = () => (
 
     <section className={styles.transactionArray}>
       <div className={styles.transactionArrayTitles}>
-        <h4 className={styles.transactionArrayTitle}>Date</h4>
-        <h4 className={styles.transactionArrayTitle}>Description</h4>
-        <h4 className={styles.transactionArrayTitle}>Amount</h4>
-        <h4 className={styles.transactionArrayTitle}>Balance</h4>
+        {arrayColumns.map((colomn, index) => (
+          <h4 key={index} className={styles.transactionArrayTitle}>
+            {colomn}
+          </h4>
+        ))}
       </div>
-      {transactions.map((transaction) => (
-        <Transaction transaction={transaction} />
+
+      {transactions.map((transaction, index) => (
+        <Transaction transaction={transaction} key={index} />
       ))}
     </section>
   </main>

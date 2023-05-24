@@ -2,6 +2,7 @@ export interface userState {
   token: string;
   user: profileType;
 }
+
 export interface profileType {
   email: string;
   firstName: string;

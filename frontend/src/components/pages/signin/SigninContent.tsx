@@ -43,10 +43,8 @@ const SigninContent = () => {
   return (
     <main className={`${styles.main} ${styles.bgDark}`}>
       <section className={styles.signInContent}>
-        <i
-          className={`${styles.fa} ${styles.faUserCircle} ${styles.signInIcon}`}
-        ></i>
         <h1>Sign In</h1>
+
         <form onSubmit={(e) => handleSubmit(e)}>
           <div
             className={`${styles.inputWrapper} ${
@@ -61,6 +59,7 @@ const SigninContent = () => {
               defaultValue={"tony@stark.com"}
             />
           </div>
+
           <div
             className={`${styles.inputWrapper} ${
               errorMessage === MessageError.BAD_PASSWORD && styles.errorColor
@@ -69,13 +68,16 @@ const SigninContent = () => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" defaultValue={"password123"} />
           </div>
+
           <div className={styles.inputRemember}>
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
+
           <div className={`${styles.errorMessage} ${styles.errorColor}`}>
             {errorMessage}
           </div>
+
           <button className={styles.signInButton} type="submit">
             Sign In
           </button>
