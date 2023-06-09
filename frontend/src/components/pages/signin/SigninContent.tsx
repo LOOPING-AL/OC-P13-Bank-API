@@ -25,9 +25,9 @@ const SigninContent = () => {
     const password = target.password.value;
 
     const response = await login(email, password);
-    const token = response.body.token;
 
     if (response.status === 200) {
+      const token = response.body.token;
       const profile = await getProfile(token);
       dispatch(reduxLogin({ token, user: profile.body }));
       dispatch(changeErrorMessage(null));
@@ -56,7 +56,7 @@ const SigninContent = () => {
               type="text"
               id="email"
               name="email"
-              defaultValue={"tony@stark.com"}
+              // defaultValue={"tony@stark.com"}
             />
           </div>
 
@@ -66,7 +66,11 @@ const SigninContent = () => {
             }`}
           >
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" defaultValue={"password123"} />
+            <input
+              type="password"
+              id="password"
+              // defaultValue={"password123"}
+            />
           </div>
 
           <div className={styles.inputRemember}>
