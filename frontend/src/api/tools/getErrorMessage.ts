@@ -20,6 +20,9 @@ const getErrorMessage = (response: any) => {
     case 401: {
       return MessageError.BAD_ROUTE;
     }
+    case 500: {
+      return MessageError.INTERNAL_SERVER_ERROR;
+    }
 
     default: {
       return `${MessageError.RETRY} ${response.status})`;
