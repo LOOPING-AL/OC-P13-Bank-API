@@ -1,8 +1,8 @@
 import React, { FormEvent, useState } from "react";
 import { styles } from "../../../assets";
 import { editProfile } from "../../../api";
-import { useAppSelector } from "../../../app/hooks";
-import { getToken } from "../../../features";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { getToken, updateName } from "../../../features";
 
 const WelcomeName = ({
   firstName,
@@ -11,8 +11,10 @@ const WelcomeName = ({
   firstName: string;
   lastName: string;
 }) => {
-  const [editMode, setEditMode] = React.useState(false);
   const token = useAppSelector(getToken);
+  const dispatch = useAppDispatch();
+
+  const [editMode, setEditMode] = React.useState(false);
   const [credentials, setCredentials] = useState({
     firstName: firstName,
     lastName: lastName,
@@ -34,6 +36,7 @@ const WelcomeName = ({
     const response = await editProfile(firstName, lastName, token);
     if (response.status === 200) {
       setCredentials({ firstName, lastName });
+      dispatch(updateName({ firstName: firstName, lastName: lastName }));
       return;
     }
   };

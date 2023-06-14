@@ -52,12 +52,7 @@ const SigninContent = () => {
             }`}
           >
             <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              // defaultValue={"tony@stark.com"}
-            />
+            <input type="text" id="email" name="email" />
           </div>
 
           <div
@@ -66,11 +61,7 @@ const SigninContent = () => {
             }`}
           >
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              // defaultValue={"password123"}
-            />
+            <input type="password" id="password" />
           </div>
 
           <div className={styles.inputRemember}>
